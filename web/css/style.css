@@ -1,0 +1,312 @@
+@import url("https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&family=Quicksand:wght@600&display=swap");
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+body {
+  font-family: 'Oxygen', sans-serif;
+  margin: 2rem;
+  background-color: #003049;
+  height: 100vh;
+  -webkit-animation: fadeIn ease-out 1s;
+          animation: fadeIn ease-out 1s;
+}
+
+header {
+  color: white;
+}
+
+.content {
+  margin: 0%;
+  border-style: solid;
+  border-radius: 20px;
+  border-color: rgba(16, 102, 155, 0.4);
+  height: 70%;
+  width: 90vw;
+  font-family: 'Oxygen', sans-serif;
+}
+
+.buttons {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  float: right;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  margin: 1em;
+  padding: 1em;
+  font-family: 'Oxygen', sans-serif;
+}
+
+.add, .remove, .edit, .start, .cancel {
+  font-size: large;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100px;
+  height: 45px;
+  margin: .5em;
+  border: none;
+  color: black;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#f77f00), to(#fcbf49));
+  background-image: linear-gradient(to bottom right, #f77f00, #fcbf49);
+  -webkit-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 20px;
+  outline: none;
+  font-family: 'Oxygen', sans-serif;
+  -webkit-transition: all .1s ease-out;
+  transition: all .1s ease-out;
+}
+
+.add:hover, .remove:hover, .edit:hover, .start:hover, .cancel:hover {
+  cursor: pointer;
+}
+
+.add:active, .remove:active, .edit:active, .start:active, .cancel:active {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+#title {
+  width: 30rem;
+  height: 3rem;
+  padding-top: 0em;
+  margin-top: .25em;
+  border-radius: 5px;
+  border-width: 0;
+  outline: none;
+  font-family: 'Oxygen', sans-serif;
+  padding-left: 10px;
+}
+
+#title[type='text'] {
+  font-size: x-large;
+}
+
+.bottom {
+  margin-top: 1em;
+}
+
+.time {
+  margin-bottom: 1em;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50px 40px 50px 70px;
+      grid-template-columns: 50px 40px 50px 70px;
+  -ms-grid-rows: .5fr;
+      grid-template-rows: .5fr;
+}
+
+.time .hour {
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 2;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  text-align: center;
+  height: 30px;
+  margin-right: 5px;
+  font-family: 'Oxygen', sans-serif;
+  border-radius: 5px;
+  border-width: 0;
+  outline: none;
+}
+
+.time .hour[type='text'] {
+  font-size: large;
+}
+
+.time .colon {
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+  grid-column-end: 3;
+  margin-left: 15px;
+  margin-top: none;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  position: relative;
+  outline: none;
+  font-family: 'Oxygen', sans-serif;
+  font-size: x-large;
+  color: white;
+}
+
+.time .minute {
+  -ms-grid-column: 3;
+      grid-column-start: 3;
+  grid-column-end: 4;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  text-align: center;
+  height: 30px;
+  outline: none;
+  font-family: 'Oxygen', sans-serif;
+  border-radius: 5px;
+  border-width: 0;
+}
+
+.time .minute[type='text'] {
+  font-size: large;
+}
+
+.time #am {
+  -ms-grid-column: 4;
+      grid-column-start: 4;
+  grid-column-end: 5;
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+.time #pm {
+  -ms-grid-column: 4;
+      grid-column-start: 4;
+  grid-column-end: 5;
+  position: absolute;
+  margin-top: 30px;
+  margin-left: 265px;
+}
+
+.time .ampm_text {
+  font-family: 'Oxygen', sans-serif;
+  color: white;
+}
+
+.time .ampm_slider {
+  -ms-grid-column: 4;
+      grid-column-start: 4;
+  grid-column-end: 5;
+  position: absolute;
+  margin-top: 30px;
+  margin-left: 13em;
+  /* The switch - the box around the slider */
+  /* Hide default HTML checkbox */
+  /* The slider */
+  /* Rounded sliders */
+}
+
+.time .ampm_slider .switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 22px;
+}
+
+.time .ampm_slider .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.time .ampm_slider .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #21aae0;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.time .ampm_slider .slider:before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  left: 4px;
+  bottom: 3px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.time .ampm_slider input:checked + .slider {
+  background-color: black;
+}
+
+.time .ampm_slider input:focus + .slider {
+  -webkit-box-shadow: 0 0 1px #2196F3;
+          box-shadow: 0 0 1px #2196F3;
+}
+
+.time .ampm_slider input:checked + .slider:before {
+  -webkit-transform: translateX(16px);
+  transform: translateX(16px);
+}
+
+.time .ampm_slider .slider.round {
+  border-radius: 34px;
+}
+
+.time .ampm_slider .slider.round:before {
+  border-radius: 50%;
+}
+
+.date {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto, auto, auto;
+      grid-template-columns: auto, auto, auto;
+  -ms-grid-rows: 30px;
+      grid-template-rows: 30px;
+  width: 10rem;
+}
+
+.date .month {
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 2;
+  margin-right: 10px;
+  border-radius: 5px;
+  font-family: 'Oxygen';
+  position: relative;
+}
+
+.date #month {
+  height: 30px;
+  width: 9em;
+  margin-right: 10px;
+  border-radius: 5px;
+  font-family: 'Oxygen';
+  position: relative;
+}
+
+.date .day {
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+  grid-column-end: 3;
+  width: 50px;
+  margin-right: 10px;
+  text-align: center;
+  border-radius: 5px;
+  font-family: 'Oxygen', sans-serif;
+}
+
+.date .year {
+  -ms-grid-column: 3;
+      grid-column-start: 3;
+  grid-column-end: 4;
+  width: 60px;
+  margin-left: 10px;
+  text-align: center;
+  border-radius: 5px;
+  font-family: 'Oxygen', sans-serif;
+}
+/*# sourceMappingURL=style.css.map */
