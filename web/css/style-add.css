@@ -1,34 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&family=Quicksand:wght@600&display=swap");
-@-webkit-keyframes fadeIn {
-  from {
-    opacity: 0%;
-  }
-  to {
-    opacity: 100%;
-  }
-}
-@keyframes fadeIn {
-  from {
-    opacity: 0%;
-  }
-  to {
-    opacity: 100%;
-  }
-}
-
-body {
-  font-family: 'Oxygen', sans-serif;
-  margin: 2rem;
-  background-color: #003049;
-  height: 100vh;
-  -webkit-animation: fadeIn ease-out 1s;
-          animation: fadeIn ease-out 1s;
-}
-
-header {
-  color: white;
-}
-
 .content {
   margin: 0%;
   border-style: solid;
@@ -37,47 +7,6 @@ header {
   height: 70%;
   width: 90vw;
   font-family: 'Oxygen', sans-serif;
-}
-
-.buttons {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  float: right;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  margin: 1em;
-  padding: 1em;
-  font-family: 'Oxygen', sans-serif;
-}
-
-.add, .remove, .edit, .start, .cancel {
-  font-size: large;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  width: 100px;
-  height: 45px;
-  margin: .5em;
-  border: none;
-  color: black;
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#f77f00), to(#fcbf49));
-  background-image: linear-gradient(to bottom right, #f77f00, #fcbf49);
-  -webkit-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-          box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border-radius: 20px;
-  outline: none;
-  font-family: 'Oxygen', sans-serif;
-  -webkit-transition: all .1s ease-out;
-  transition: all .1s ease-out;
-}
-
-.add:hover, .remove:hover, .edit:hover, .start:hover, .cancel:hover {
-  cursor: pointer;
-}
-
-.add:active, .remove:active, .edit:active, .start:active, .cancel:active {
-  -webkit-transform: scale(0.9);
-          transform: scale(0.9);
 }
 
 #title {
@@ -309,4 +238,4 @@ header {
   border-radius: 5px;
   font-family: 'Oxygen', sans-serif;
 }
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=style-add.css.map */

@@ -3,7 +3,8 @@
 <html>
     <head>
         <title>Add a new timer</title>
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/style-add.css">
+        <link href="/css/style-universal.css" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="UTF-8">
 
@@ -34,7 +35,7 @@
 
                     <!-- Rounded switch -->
                     <label class="switch" id="ampm">
-                        <input type="checkbox">
+                        <input type="checkbox" id="ampm-switch">
                         <span class="slider round"></span>
                     </label>
     
@@ -65,10 +66,12 @@
             </div>
 
             <div class="buttons">
-                <button class="add">Save</button>
-                <button class="cancel">Cancel</button>
+                <button class="action-buttons" id="save-button">Save</button>
+                <button class="action-buttons" id="cancel-button">Cancel</button>
+                <button class="action-buttons" id="console-button">Console</button>
             </div>
 
         </div>
     </body>
+    <script src="js/add.js"></script>
 </html>

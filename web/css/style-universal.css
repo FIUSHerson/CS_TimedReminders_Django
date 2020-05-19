@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&family=Quicksand:wght@600&display=swap");
+header {
+  color: white;
+  font-family: 'Oxygen';
+}
+
+body {
+  font-family: 'Oxygen', sans-serif;
+  margin: 2rem;
+  background-image: -webkit-gradient(linear, right bottom, left top, from(#003049), to(#0a5983));
+  background-image: linear-gradient(to top left, #003049, #0a5983);
+  height: 100vh;
+  -webkit-animation: fadeIn ease-out 1s;
+          animation: fadeIn ease-out 1s;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+.buttons {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  float: right;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  margin: 1em;
+  padding: 1em;
+  font-family: 'Oxygen', sans-serif;
+}
+
+.action-buttons {
+  font-size: large;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100px;
+  height: 45px;
+  margin: .5em;
+  border: none;
+  color: black;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#f77f00), to(#fcbf49));
+  background-image: linear-gradient(to bottom right, #f77f00, #fcbf49);
+  -webkit-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 20px;
+  outline: none;
+  font-family: 'Oxygen', sans-serif;
+  -webkit-transition: all .1s ease-out;
+  transition: all .1s ease-out;
+}
+
+.action-buttons:hover {
+  cursor: pointer;
+}
+
+.action-buttons:active {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+/*# sourceMappingURL=style-universal.css.map */
