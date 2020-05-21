@@ -12,6 +12,7 @@ body {
   height: 100vh;
   -webkit-animation: fadeIn ease-out 1s;
           animation: fadeIn ease-out 1s;
+  overflow: hidden;
 }
 
 @-webkit-keyframes fadeIn {
@@ -71,5 +72,70 @@ body {
 .action-buttons:active {
   -webkit-transform: scale(0.9);
           transform: scale(0.9);
+}
+
+@-webkit-keyframes showError {
+  from {
+    opacity: 0%;
+    left: -20px;
+  }
+  to {
+    opacity: 100%;
+    left: 15px;
+  }
+}
+
+@keyframes showError {
+  from {
+    opacity: 0%;
+    left: -20px;
+  }
+  to {
+    opacity: 100%;
+    left: 15px;
+  }
+}
+
+#error-messages {
+  display: none;
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  max-width: 30vw;
+  max-height: 300px;
+  float: left;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  margin: 1em;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-family: 'Oxygen', sans-serif;
+  border-radius: 30px;
+  background: red;
+  opacity: 100%;
+  border-color: #471919;
+  border-style: solid;
+  border-width: medium;
+  word-wrap: true;
+  -webkit-animation: showError .5s ease-out;
+          animation: showError .5s ease-out;
+}
+
+#error-list {
+  list-style: none;
+  max-height: 200px;
+  overflow-y: scroll;
+}
+
+#error-title {
+  color: white;
+  font-family: 'Oxygen', sans-serif;
+}
+
+#error-text {
+  color: white;
+  font-family: 'Oxygen', sans-serif;
 }
 /*# sourceMappingURL=style-universal.css.map */

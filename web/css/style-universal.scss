@@ -12,6 +12,7 @@ body {
     height: 100vh;
 
     animation: fadeIn ease-out 1s;
+    overflow: hidden;
 }
 
 @keyframes fadeIn {
@@ -62,4 +63,58 @@ body {
     &:active {
         transform: scale(.9);
     }
+}
+
+@keyframes showError {
+    from {
+        opacity: 0%;
+        left: -20px;
+    }
+    to {
+        opacity: 100%;
+        left: 15px;
+    }
+}
+
+#error-messages {
+    display: none;
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    max-width: 30vw;
+    max-height: 300px;
+
+    float: left;
+    align-content: center;
+    margin: 1em;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    
+    font-family: 'Oxygen', sans-serif;
+    border-radius: 30px;
+    background: red;
+    opacity: 100%;
+    border-color: rgb(71, 25, 25);
+    border-style: solid;
+    border-width: medium;
+    word-wrap: true;
+    animation: showError .5s ease-out;
+}
+
+#error-list {
+    list-style: none;
+    max-height: 200px;
+    overflow-y: scroll;
+}
+
+#error-title {
+    color: white;
+    font-family: 'Oxygen', sans-serif;
+}
+
+#error-text {
+    color: white;
+    font-family: 'Oxygen', sans-serif;
 }
