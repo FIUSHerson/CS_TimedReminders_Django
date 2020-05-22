@@ -1,83 +1,88 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <title>Add a new timer</title>
-        <link rel="stylesheet" href="web/css/style-add.css">
-        <link href="/css/style-universal.css" rel="stylesheet">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta charset="UTF-8">
 
-    </head>
-    <body>
+<head>
+    <title>Add a new timer</title>
 
-        <div class="top">
-            <header>
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/style-add.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static '/style-universal.css' %}" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
 
-                <h1>Add a new timer</h1>
+</head>
 
-            </header>
+<body>
 
-            <input type="text" id="title" maxlength="100" class="TitleText" placeholder="Name">
+    <div class="top">
+        <header>
 
+            <h1>Add a new timer</h1>
+
+        </header>
+
+        <input type="text" id="title" maxlength="100" class="TitleText" placeholder="Name">
+
+    </div>
+
+    <div class="bottom">
+
+
+        <div class="time">
+            <input class="hour" type="number" id="hour" min="1" max="12" placeholder=HH>
+            <p class="colon">:</p>
+            <input class="minute" type="number" id="minute" min="0" max="59" placeholder="MM">
+            <!--input class="switch" type="checkbox" id="ampm" maxlength="2" placeholder="AM"-->
+
+            <p class="ampm_text" id="am">AM</p>
+            <div class="ampm_slider">
+
+                <!-- Rounded switch -->
+                <label class="switch" id="ampm">
+                    <input type="checkbox" id="ampm-switch">
+                    <span class="slider round"></span>
+                </label>
+
+            </div>
+            <p class="ampm_text" id="pm">PM</p>
         </div>
 
-        <div class="bottom">
-            
-
-            <div class="time">
-                <input class="hour" type="number" id="hour" min="1" max="12" placeholder=HH>
-                <p class="colon">:</p>
-                <input class="minute" type="number" id="minute" min="0" max="59" placeholder="MM">
-                <!--input class="switch" type="checkbox" id="ampm" maxlength="2" placeholder="AM"-->
-
-                <p class="ampm_text" id="am">AM</p>
-                <div class="ampm_slider">
-
-                    <!-- Rounded switch -->
-                    <label class="switch" id="ampm">
-                        <input type="checkbox" id="ampm-switch">
-                        <span class="slider round"></span>
-                    </label>
-    
-                </div>
-                <p class="ampm_text" id="pm">PM</p>    
+        <div class="date">
+            <div class="month">
+                <select id="month">
+                    <option value="none">Select month</option>
+                    <option value="January">January</option>
+                    <option value="February">February</option>
+                    <option value="March">March</option>
+                    <option value="April">April</option>
+                    <option value="May">May</option>
+                    <option value="June">June</option>
+                    <option value="July">July</option>
+                    <option value="August">August</option>
+                    <option value="September">September</option>
+                    <option value="October">October</option>
+                    <option value="November">November</option>
+                    <option value="December">December</option>
+                </select>
             </div>
-
-            <div class="date">
-                <div class="month">
-                    <select id="month">
-                        <option value="none">Select month</option>
-                        <option value="January">January</option>
-                        <option value="February">February</option>
-                        <option value="March">March</option>
-                        <option value="April">April</option>
-                        <option value="May">May</option>
-                        <option value="June">June</option>
-                        <option value="July">July</option>
-                        <option value="August">August</option>
-                        <option value="September">September</option>
-                        <option value="October">October</option>
-                        <option value="November">November</option>
-                        <option value="December">December</option>
-                    </select>
-                </div>
-                <input class="day" type="number" id="day" min="1" max="31" placeholder="Day">
-                <input class="year" type="number" id="year" min="2020" placeholder="2020">
-            </div>
-
-            <div class="buttons">
-                <button class="action-buttons" id="save-button">Save</button>
-                <button class="action-buttons" id="cancel-button">Cancel</button>
-            </div>
-
-            <div id="error-messages">
-                <h3 id='error-title'>Woah there!</h3>
-                <li id="error-list">
-
-                </li>
-            </div>
+            <input class="day" type="number" id="day" min="1" max="31" placeholder="Day">
+            <input class="year" type="number" id="year" min="2020" placeholder="2020">
         </div>
-    </body>
-    <script src="js/add.js"></script>
+
+        <div class="buttons">
+            <button class="action-buttons" id="save-button">Save</button>
+            <button class="action-buttons" id="cancel-button">Cancel</button>
+        </div>
+
+        <div id="error-messages">
+            <h3 id='error-title'>Woah there!</h3>
+            <li id="error-list">
+
+            </li>
+        </div>
+    </div>
+</body>
+<script src="js/add.js"></script>
+
 </html>

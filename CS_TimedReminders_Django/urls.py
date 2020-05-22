@@ -15,11 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls.static import static
+from django.conf import settings
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 from StoredTime import views
 
 urlpatterns = [
-    path('', views.home, name='home'),
+    path('', views.main, name='main'),
+    path('add/', views.add, name='add'),
     path('countdown/', views.countdown, name='countdown'),
-    path('admin/', admin.site.urls)
+    path('admin/', admin.site.urls),
 ]
+
+urlpatterns += staticfiles_urlpatterns()

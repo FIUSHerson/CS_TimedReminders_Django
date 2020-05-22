@@ -1,30 +1,35 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>CS_TimedReminders Home</title>
-        <link href="/css/style-universal.css" rel="stylesheet">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta charset="UTF-8">
 
-    </head>
+<head>
+    <title>CS_TimedReminders Home</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/style-universal.css' %}" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
 
-    <body>
-        <header>
-            <h1>CS_TimedReminders_django</h1>
-        </header>
+</head>
 
-        
-        <div class="content">
-            
-        </div>
+<body>
+    <header>
+        <h1>CS_TimedReminders_django</h1>
+    </header>
 
-        <div class="buttons">
-            <button id="add-button" class="action-buttons">Add</button>
-            <button id="remove-button" class="action-buttons">Remove</button>
-            <button id="edit-button" class="action-buttons">Edit</button>
-            <button id="start-button" class="action-buttons">Start</button>
-        </div>
-        
-    </body>
-    <script src="js/list.js"></script>
+
+    <div class="content">
+
+    </div>
+
+    <div class="buttons">
+        <button id="add-button" class="action-buttons">Add</button>
+        <button id="remove-button" class="action-buttons">Remove</button>
+        <button id="edit-button" class="action-buttons">Edit</button>
+        <button id="start-button" class="action-buttons">Start</button>
+    </div>
+
+</body>
+<script src="{% static '/js/list.js' %}"></script>
+
 </html>
