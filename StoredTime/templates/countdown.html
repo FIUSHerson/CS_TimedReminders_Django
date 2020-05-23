@@ -28,8 +28,22 @@
 
             </div>
         </div>
-        <div class="right">
+        <div class="content" id="countdown-list">
+          {% for time in object_list %}
+          <li class="time-lists">
+            <div class="list_text">
 
+              <p class="list-name">Name: </p>
+              <p class="list-text-content">{{ time.name }}</p>
+              <br style="line-height: 200">
+              <p class="list-name">Time: </p>
+              <p class="list-text-content">{{ time.time_targ }}</p>
+
+            </div>
+          </li>
+          {% empty %}
+          <p>There is nothing here! Press Add to get started.</p>
+          {% endfor %}
         </div>
     </div>
     <div class="bottom">

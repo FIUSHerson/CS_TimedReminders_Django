@@ -34,6 +34,10 @@ body {
   }
 }
 
+br {
+  line-height: 200px;
+}
+
 .buttons {
   position: absolute;
   bottom: 0;
@@ -147,12 +151,36 @@ body {
   border-style: solid;
 
   margin: 2em;
-  padding: 2em;
+  padding: 1.5em;
   min-height: 65vh;
   max-height: 65vh;
 }
 
 .time-lists {
   color: white;
+  list-style: none;
+  background-color: #f77f00;
+  border-radius: 10px;
+
+  margin: 10px;
+  margin-bottom: 30px;
+  padding: 1.5em;
+  font-size: large;
 }
+
+.list-name {
+  font-size: 25px;
+  font-weight: 1000;
+  display: inline;
+}
+.list-text-content {
+  display: inline;
+  margin-left: 10px;
+}
+
+.icons {
+  right: 0;
+  
+}
+
 /*# sourceMappingURL=style-universal.css.map */
