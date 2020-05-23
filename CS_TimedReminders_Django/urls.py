@@ -18,13 +18,14 @@ from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-
 from StoredTime import views
 
+from StoredTime.views import TimeList
+
 urlpatterns = [
-    path('', views.main, name='main'),
+    path('', TimeList.as_view(template_name = 'main.html'), name='time-list'),
     path('add/', views.add, name='add'),
-    path('countdown/', views.countdown, name='countdown'),
+    path('countdown/', TimeList.as_view(template_name = 'countdown.html'), name='countdown'),
     path('admin/', admin.site.urls),
 ]
 
