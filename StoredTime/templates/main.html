@@ -30,7 +30,9 @@
         </div>
 
         <div class="icons">
-          
+          {% load static %}
+          <img src="{% static '/edit.png' %}" alt="edit" class="edit-icon">
+          <img src="{% static '/close.png' %}" alt="delete" class="delete-icon">
         </div>
       </li>
       {% empty %}

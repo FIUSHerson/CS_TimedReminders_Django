@@ -34,10 +34,6 @@ body {
   }
 }
 
-br {
-  line-height: 200px;
-}
-
 .buttons {
   position: absolute;
   bottom: 0;
@@ -161,6 +157,9 @@ br {
   list-style: none;
   background-color: #f77f00;
   border-radius: 10px;
+  display: flex;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 
   margin: 10px;
   margin-bottom: 30px;
@@ -179,8 +178,51 @@ br {
 }
 
 .icons {
+  position: absolute;
   right: 0;
-  
+  margin-right: 8em;
+
+}
+.edit-icon, .delete-icon {
+  height: 50px;
+  width: 50px;
+  margin-right: 1em;
+  padding: 10px;
+  display: inline;
+  align-self: center;
+
+  background-color: #f9af00;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  transition: all .15s ease-in-out;
+
+  &:active {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+}
+.edit-icon:hover, .delete-icon:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+.edit-icon:active, .delete-icon:active {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
 }
 
+
+
+
+/*
+.action-buttons:hover {
+  cursor: pointer;
+}
+
+.action-buttons:active {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+*/
 /*# sourceMappingURL=style-universal.css.map */
