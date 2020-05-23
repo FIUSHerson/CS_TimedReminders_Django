@@ -68,6 +68,8 @@ body {
 
 .action-buttons:hover {
   cursor: pointer;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .action-buttons:active {
@@ -141,12 +143,9 @@ body {
 }
 
 .content {
-  border-color: white;
-  border-width: medium;
-  border-radius: 20px;
-  border-style: solid;
-
-  margin: 2em;
+  margin-top: 3em;
+  margin-left: 0em;
+  margin-right: 0em;
   padding: 1.5em;
   min-height: 65vh;
   max-height: 65vh;
@@ -180,10 +179,11 @@ body {
 .icons {
   position: absolute;
   right: 0;
-  margin-right: 8em;
+  margin-right: 5em;
 
 }
 .edit-icon, .delete-icon {
+  right: 0px;
   height: 50px;
   width: 50px;
   margin-right: 1em;
