@@ -30,7 +30,6 @@
         </div>
 
         <div class="icons">
-          {% load static %}
           <img src="{% static '/edit.png' %}" alt="edit" class="edit-icon">
           <img src="{% static '/close.png' %}" alt="delete" class="delete-icon">
         </div>
@@ -41,8 +40,8 @@
     </div>
 
     <div class="buttons">
-        <button type="submit" id="add-button" class="action-buttons"  href="{% url 'add' %}">Add</button>
-        <button type="submit" id="start-button" class="action-buttons" href="{% url 'countdown' %}">Start</button>
+        <a type="submit" id="add-button" class="action-buttons" href="{% url 'add' %}">Add</a>
+        <a type="submit" id="start-button" class="action-buttons" href="{% url 'countdown' %}">Start</a>
     </div>
 
 </body>
