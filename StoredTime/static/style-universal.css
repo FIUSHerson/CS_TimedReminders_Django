@@ -52,14 +52,14 @@ body {
   padding: 35px;
   padding-top: 15px;
   padding-bottom: 10px;
-  width: 100px;
-  height: 45px;
+  width: 75px;
+  height: 35px;
   margin: .5em;
   margin-bottom: 0em;
   text-decoration: none;
   display: inline-block;
   text-align: center;
-  font-size: 30px;
+  font-size: 25px;
   border: none;
   color: black;
   background-image: -webkit-gradient(linear, left top, right bottom, from(#f77f00), to(#fcbf49));
@@ -137,7 +137,7 @@ body {
 #error-list {
   list-style: none;
   max-height: 200px;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 #error-title {
@@ -157,7 +157,7 @@ body {
   padding: 1.5em;
   min-height: 65vh;
   max-height: 65vh;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .time-lists {

@@ -48,8 +48,9 @@
     </div>
     <div class="bottom">
         <div class="buttons">
-            <button class="action-buttons" id="stop-button">Stop</button>
+            <a class="action-buttons" id="stop-button" href="{% url 'time-list' %}">Stop</a>
         </div>
     </div>
+    <script src="{% static 'countdown.js' %}"></script>
 </body>
 </html>
