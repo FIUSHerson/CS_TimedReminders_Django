@@ -1,5 +1,34 @@
+.top {
+  display: inline-block;
+  width: 100vw;
+  margin-right: 2em;
+}
+
 .left {
-  display: grid;
+  display: inline;
   align-items: center;
-  
+
+  width: 100vw;
+
+}
+
+.timer {
+  background: #bbbbbb;
+  border-radius: 10px;
+  height: 15px;
+  width: 30em;
+  margin: 2em;
+}
+
+.progress-bar {
+    background: green;
+    width: 43%;
+    height: 15px;
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+
+.content {
 }
