@@ -2,9 +2,11 @@
 const stopButton = document.getElementById('stop-button');
 const timeText = document.getElementById('time-text');
 const progBar = document.getElementById('progress-bar');
+const timeNameList = document.querySelectorAll('list-name-hidden');
 
 // listeners
 window.addEventListener('load', function() {
+  console.log(timeNameList.classList)
   timer(0,0,10);
 })
 
@@ -120,10 +122,10 @@ function timer(hour, minute, second) {
       setTimeout(function() { alert(`Time is up! ${e}`); }, 1);
     }
   }, 1000);
-    if (convertTimeToSec(ct) = 0 
-    {
+    //if (convertTimeToSec(ct) = 0
+    //{
 
 
 
-    }
+    //}
 }
