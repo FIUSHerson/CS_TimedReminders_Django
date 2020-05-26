@@ -5,7 +5,7 @@ const progBar = document.getElementById('progress-bar');
 
 // listeners
 window.addEventListener('load', function() {
-  timer(1,0,20);
+  timer(0,0,10);
 })
 
 // vars
@@ -89,7 +89,11 @@ function decreaseTimer() {
           ct.second = 59;
           console.log(ct.hour, ct.minute, ct.second);
         }
-        else {throw '';}
+        else {
+
+
+            throw '';
+        }
       }
     }
     else {
@@ -115,5 +119,11 @@ function timer(hour, minute, second) {
       clearInterval(interval);
       setTimeout(function() { alert(`Time is up! ${e}`); }, 1);
     }
-   }, 1000);
+  }, 1000);
+    if (convertTimeToSec(ct) = 0 
+    {
+
+
+
+    }
 }
