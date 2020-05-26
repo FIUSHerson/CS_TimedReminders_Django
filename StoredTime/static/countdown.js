@@ -1,19 +1,22 @@
 // imports
 const stopButton = document.getElementById('stop-button');
 const timeText = document.getElementById('time-text');
+const progBar = document.getElementById('progress-bar');
 
 // listeners
 window.addEventListener('load', function() {
-  timeText.innerHTML = `1:01:02`;
-  //timer(1,10,5);
+  //timeText.innerHTML = `1:01:02`;
+  timer(0,0,10);
 })
 
 // vars
-var ct = { // initial values in case values are empty
+var ct = { // default values
   hour: 0,
   minute: 5,
   second: 0
 }
+
+var initTime = 0;
 
 // functions
 function convertTimeToSec(time) {
@@ -31,7 +34,6 @@ function overrideDefaultTime(hour, minute, second) {
 
 function updateTimer(time) {
   // Updates what's on screen with the timer
-  console.log(`Updating display timer to ${time.hour}:${time.minute}:${time.second}.`);
 
   // It's a little nasty, but it works... i think
   // I don't really know any algorithms that could clean this up
@@ -59,8 +61,11 @@ function updateTimer(time) {
         timeText.innerHTML = `${time.hour}:${time.minute}:${time.second}`;
       }
     }
-
   }
+
+  // Updates the progress bar
+  const progBarStyle = progBar.style;
+  progBarStyle.width = `${(1-(convertTimeToSec(ct) / initTime)) * 100}%`;
 }
 
 function decreaseTimer() {
@@ -101,6 +106,7 @@ function timer(hour, minute, second) {
   // TODO - For each timer object, run the timer for that object.
 
   overrideDefaultTime(hour, minute, second);
+  initTime = convertTimeToSec(ct);
   updateTimer(ct);
   var interval = setInterval(function() {
     try {

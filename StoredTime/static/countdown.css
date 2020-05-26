@@ -25,12 +25,14 @@
   margin: 2em;
 }
 
-.progress-bar {
+#progress-bar {
     background: green;
     width: 0%;
     height: 15px;
-    border-radius: 10px;
+    border-radius: 20px;
 
+    transition: width 1s;
+    transition-timing-function: linear;
     overflow: hidden;
 }
 
