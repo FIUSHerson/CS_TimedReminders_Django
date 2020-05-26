@@ -6,7 +6,7 @@ const progBar = document.getElementById('progress-bar');
 // listeners
 window.addEventListener('load', function() {
   //timeText.innerHTML = `1:01:02`;
-  timer(0,0,10);
+  timer(1,0,0);
 })
 
 // vars
@@ -87,7 +87,8 @@ function decreaseTimer() {
         if (ct.hour != 0) {
           ct.hour = ct.hour - 1;
           ct.minute = 59;
-          console.log(ct.hour, ct.minute);
+          ct.second = 59;
+          console.log(ct.hour, ct.minute, ct.second);
         }
         else {throw '';}
       }
