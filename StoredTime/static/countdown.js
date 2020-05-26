@@ -4,7 +4,7 @@ const timeText = document.getElementById('time-text');
 
 // listeners
 window.addEventListener('load', function() {
-  timer();
+  timer(1,10,5);
 })
 
 // vars
@@ -42,7 +42,34 @@ function updateTimer(time) {
   // Updates what's on screen with the timer
   console.log(`Updating display timer to ${time.hour}:${time.minute}:${time.second}.`);
 
-  // js stuff
+  // It's a little nasty, but it works... i think
+  // I don't really know any algorithms that could clean this up
+  if (time.hour == 0) {
+    if (time.minute == 0) {
+      timeText.innerHTML = `${time.second}`;
+    } else {
+      if (time.second < 10) { // just some formatting
+        timeText.innerHTML = `${time.minute}:0${time.second}`;
+      } else {
+        timeText.innerHTML = `${time.minute}:${time.second}`;
+      }
+    }
+  } else {
+    if (time.minute < 10) { // more formatting
+      if (time.second < 10) { // copy from a little bit above, but with hours
+        timeText.innerHTML = `${time.hour}:0${time.minute}:0${time.second}`;
+      } else {
+        timeText.innerHTML = `${time.hour}:0${time.minute}:${time.second}`;
+      }
+    } else {
+      if (time.second < 10) { // copy from a little bit above
+        timeText.innerHTML = `${time.hour}:${time.minute}:0${time.second}`;
+      } else {
+        timeText.innerHTML = `${time.hour}:${time.minute}:${time.second}`;
+      }
+    }
+
+  }
 }
 
 function decreaseTimer() {
