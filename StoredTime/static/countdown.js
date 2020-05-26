@@ -5,7 +5,6 @@ const progBar = document.getElementById('progress-bar');
 
 // listeners
 window.addEventListener('load', function() {
-  //timeText.innerHTML = `1:01:02`;
   timer(1,0,20);
 })
 
