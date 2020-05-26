@@ -12,6 +12,11 @@
 
 }
 
+#time-text {
+  color: white;
+  font-size: 5rem;
+}
+
 .timer {
   background: #bbbbbb;
   border-radius: 10px;
@@ -22,7 +27,7 @@
 
 .progress-bar {
     background: green;
-    width: 43%;
+    width: 0%;
     height: 15px;
     border-radius: 10px;
 

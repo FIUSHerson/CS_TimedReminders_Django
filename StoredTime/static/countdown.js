@@ -4,11 +4,11 @@ const timeText = document.getElementById('time-text');
 
 // listeners
 window.addEventListener('load', function() {
-  timer(1,10,5);
+  timeText.innerHTML = `1:01:02`;
+  //timer(1,10,5);
 })
 
 // vars
-
 var ct = { // initial values in case values are empty
   hour: 0,
   minute: 5,
@@ -16,17 +16,8 @@ var ct = { // initial values in case values are empty
 }
 
 // functions
-function sendNotificiation(text) {
-  askNotificationPermission();
-
-  if (text == '')
-  {
-    var notifyText = 'Hello!';
-  }
-  else {
-    var notifyText = text;
-  }
-  var notify = new Notification(notifyText);
+function convertTimeToSec(time) {
+    return (time.second + (time.minute * 60) + (time.hour * 3600));
 }
 
 function overrideDefaultTime(hour, minute, second) {
