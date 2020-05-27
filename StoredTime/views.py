@@ -16,3 +16,12 @@ def add(request):
 
 def countdown(request):
     return render(request, 'countdown.html')
+
+def delete(request, name):
+    myTime = get_object_or_404(TimeTarget, name=name)
+
+    if request.method == 'POST':
+        myTime.delete()
+        return redirect('/')
+
+    return render(request, 'main.html', {'name': name})
