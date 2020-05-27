@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CS_TimedReminders Home</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/style-universal.css' %}" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+
+</head>
+
+<body>
+    <header>
+        <h1>CS_TimedReminders_django</h1>
+    </header>
+
+
+    <div class="content" id="main-list">
+      {% for time in object_list %}
+      <li class="time-lists">
+        <div class="list_text">
+
+          <p class="list-name">Name: </p>
+          <p class="list-text-content">{{ time.name }}</p>
+          <br style="line-height: 200">
+          <p class="list-name">Time: </p>
+          <p class="list-text-content">{{ time.time_targ }}</p>
+
+        </div>
+
+        <div class="icons">
+          <form class="delete-form" action="{% url 'yeetus-deletus' %}" method="post">
+            {% csrf_token %}
+            <img src="{% static '/close.png' %}" alt="delete" class="delete-icon" id="delete-icon">
+          </form>
+        </div>
+      </li>
+      {% empty %}
+      <p>There is nothing here! Press Add to get started.</p>
+      {% endfor %}
+    </div>
+
+    <div class="buttons">
+        <a type="submit" id="add-button" class="action-buttons" href="{% url 'add' %}">Add</a>
+        <a type="submit" id="start-button" class="action-buttons" href="{% url 'countdown' %}">Start</a>
+    </div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="{% static 'main.js' %}"></script>
+
+</body>
+
+</html>

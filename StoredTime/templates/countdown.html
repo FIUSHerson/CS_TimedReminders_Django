@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'countdown.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static '/style-universal.css' %}" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Add responsive title that changes to the title of the countdown-->
+    <title id="title">Countdown</title>
+</head>
+<body>
+    <header>
+        <div class="back-arrow">
+
+        </div>
+        <div class="title">
+            <h1>Countdown</h1>
+        </div>
+    </header>
+    <div class="top">
+        <div class="left">
+            <div class="time-container">
+              <h2 id="time-text"></h2>
+            </div>
+
+            <div class="timer">
+              <div id="progress-bar"></div>
+            </div>
+
+            <div class="up-next">
+
+            </div>
+        </div>
+        <div class="content" id="countdown-list">
+          {% for time in object_list %}
+          <li class="time-lists">
+            <div class="list_text">
+
+              <p class="list-name">Name: </p>
+              <p class="list-text-content">{{ time.name }}</p>
+              <br style="line-height: 200">
+              <p class="list-name">Time: </p>
+              <p class="list-text-content">{{ time.time_targ }}</p>
+
+              <div id="list-name-hidden">
+                <div id="{{ time.name }}"></div>
+              </div>
+
+            </div>
+          </li>
+          {% empty %}
+          <p>There is nothing here!</p>
+          {% endfor %}
+
+          {% for time in object_list %}
+          <div class="list-time-hidden" id="list-time-hidden">
+                <p>{{ time.time_targ }}</p>
+          </div>
+          {% endfor %}
+        </div>
+    </div>
+    <div class="bottom">
+        <div class="buttons">
+            <a class="action-buttons" id="stop-button" href="{% url 'time-list' %}">Stop</a>
+        </div>
+    </div>
+    <script src="{% static 'countdown.js' %}"></script>
+</body>
+</html>

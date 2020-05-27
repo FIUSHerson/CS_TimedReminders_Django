@@ -1,0 +1,238 @@
+@import url("https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&family=Quicksand:wght@600&display=swap");
+
+header {
+  color: white;
+  font-family: 'Oxygen';
+}
+
+body {
+  font-family: 'Oxygen', sans-serif;
+  margin: 2rem;
+  background-image: -webkit-gradient(linear, right bottom, left top, from(#003049), to(#0a5983));
+  background-image: linear-gradient(to top left, #003049, #0a5983);
+  height: 100vh;
+  -webkit-animation: fadeIn ease-out 1s;
+          animation: fadeIn ease-out 1s;
+  overflow: hidden;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+.buttons {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  float: right;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  margin: 1em;
+  margin-bottom: 1em;
+  padding: 1em;
+  font-family: 'Oxygen', sans-serif;
+}
+
+.action-buttons {
+  font-size: large;
+  padding: 35px;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  width: 75px;
+  height: 35px;
+  margin: .5em;
+  margin-bottom: 0em;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  font-size: 25px;
+  border: none;
+  color: black;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#f77f00), to(#fcbf49));
+  background-image: linear-gradient(to bottom right, #f77f00, #fcbf49);
+  -webkit-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 40px;
+  outline: none;
+  font-family: 'Oxygen', sans-serif;
+  -webkit-transition: all .1s ease-out;
+  transition: all .1s ease-out;
+
+}
+
+.action-buttons:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.action-buttons:active {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+@-webkit-keyframes showError {
+  from {
+    opacity: 0%;
+    left: -20px;
+  }
+  to {
+    opacity: 100%;
+    left: 15px;
+  }
+}
+
+@keyframes showError {
+  from {
+    opacity: 0%;
+    left: -20px;
+  }
+  to {
+    opacity: 100%;
+    left: 15px;
+  }
+}
+
+#error-messages {
+  display: none;
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  max-width: 30vw;
+  max-height: 300px;
+  float: left;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  margin: 1em;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-family: 'Oxygen', sans-serif;
+  border-radius: 30px;
+  background: red;
+  opacity: 100%;
+  border-color: #471919;
+  border-style: solid;
+  border-width: medium;
+  word-wrap: true;
+  -webkit-animation: showError .5s ease-out;
+          animation: showError .5s ease-out;
+}
+
+#error-list {
+  list-style: none;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+#error-title {
+  color: white;
+  font-family: 'Oxygen', sans-serif;
+}
+
+#error-text {
+  color: white;
+  font-family: 'Oxygen', sans-serif;
+}
+
+.content {
+  margin-top: 3em;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1.5em;
+  min-height: 65vh;
+  max-height: 65vh;
+  overflow-y: auto;
+
+}
+
+.time-lists {
+  color: white;
+  list-style: none;
+  background-color: #f77f00;
+  border-radius: 10px;
+  display: flex;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+
+  margin: 10px;
+  margin-bottom: 30px;
+  padding: 1.5em;
+  font-size: large;
+}
+
+.list-name {
+  font-size: 25px;
+  font-weight: 1000;
+  display: inline;
+}
+.list-text-content {
+  display: inline;
+  margin-left: 10px;
+}
+
+.icons {
+  position: absolute;
+  right: 0;
+  margin-right: 5em;
+
+}
+.edit-icon, .delete-icon {
+  right: 0px;
+  height: 50px;
+  width: 50px;
+  margin-right: 1em;
+  padding: 10px;
+  display: inline;
+  align-self: center;
+
+  background-color: #f9af00;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  transition: all .15s ease-in-out;
+
+  &:active {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+}
+.edit-icon:hover, .delete-icon:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+.edit-icon:active, .delete-icon:active {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+}
+
+
+
+
+/*
+.action-buttons:hover {
+  cursor: pointer;
+}
+
+.action-buttons:active {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+*/
+/*# sourceMappingURL=style-universal.css.map */
