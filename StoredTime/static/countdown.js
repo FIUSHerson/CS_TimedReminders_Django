@@ -8,9 +8,6 @@ const targetTimeList = container.querySelectorAll('div.list-time-hidden > p');
 // listeners
 window.addEventListener('load', function() {
     dateDiff();
-    
-
-    
 })
 
 // vars
@@ -26,10 +23,12 @@ var initTime = 0;
 
 // functions
 function dateDiff() {
-    for (i = 0; i <= targetTimeList.length; i++) {
+    var i=0
+    for (i = 0; i <= targetTimeList.length;i++) {
+        var list =0
         var list = targetTimeList[i].innerHTML;
         console.log(list);
-
+        console.log(i);
         var listTime = list.replace("a.m.", "AM");
         var listTime = list.replace("p.m.", "PM");
         console.log(listTime)
@@ -40,18 +39,19 @@ function dateDiff() {
         timer(diff.hrs, diff.min, diff.leftSec)
         console.log(date1);
         console.log(date2);
+        console.log(i);
+             
+
     }
    
 }
 
 function showDiff(date1, date2) {
     var timeClock = {
-        hrs:0,
-        min:0,
-        leftSec:0
+        hrs: -1,
+        min: -1,
+        leftSec: -1
     }
-    console.log(date1);
-    console.log(date2);
     var diff = (date2 - date1) / 1000;
     diff = Math.abs(Math.floor(diff));
     console.log(diff);
