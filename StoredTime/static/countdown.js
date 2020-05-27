@@ -27,8 +27,13 @@ var initTime = 0;
 // functions
 function dateDiff() {
     for (i = 0; i <= targetTimeList.length; i++) {
-        var listTime = targetTimeList[i];
-        console.log(listTime);
+        var list = targetTimeList[i].innerHTML;
+        console.log(list);
+
+        var listTime = list.replace("a.m.", "AM");
+        var listTime = list.replace("p.m.", "PM");
+        console.log(listTime)
+
         var date1 = new Date();
         var date2 = new Date(listTime);
         var diff = showDiff(date1, date2);
