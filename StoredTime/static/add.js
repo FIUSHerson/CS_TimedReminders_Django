@@ -169,6 +169,15 @@ function makeSimpleTime(rawTime, switchValue) {
 }
 
 function save(theName, theTime) {
+  console.log(theName);
+  console.log(theTime);
+
+  var tempVar = theTime;
+
+  var newTime = tempVar.toString().replace("AM", "a.m.");
+  var newTime = tempVar.toString().replace("PM", "p.m.");
+
+
   $.ajaxSetup({
      beforeSend: function(xhr, settings) {
          function getCookie(name) {
@@ -201,6 +210,7 @@ function save(theName, theTime) {
       time: theTime,
       csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()
     },
+    dataType: 'json',
     processData: false,
     contentType: false,
   });

@@ -28,8 +28,11 @@ def delete(request, name):
 
 def create(request):
     if request.method == 'POST':
-        name = request.POST.get('nameInput', False)
-        time = request.POST.get('time', False)
+        name = request.POST.get('nameInput')
+        time = request.POST.get('time')
+
+        print(name)
+        print(time)
 
         obj = TimeTarget(name=name, time_targ=time)
         obj.save()
