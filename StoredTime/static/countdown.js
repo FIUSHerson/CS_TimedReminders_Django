@@ -19,8 +19,33 @@ var ct = { // default values
 }
 
 var initTime = 0;
+var 
+
 
 // functions
+function dateDiff() {
+    for (i = 0; i <= targetTimeList.length; i++) {
+        var listTime = targetTimeList[i];
+        var date1 = new Date();
+        var date2 = new Date(listTime);
+        showDiff(date1, date2);
+    }
+   
+}
+
+function showDiff(date1, date2) {
+
+    var diff = (date2 - date1) / 1000;
+    diff = Math.abs(Math.floor(diff));
+
+    var hrs = Math.floor(diff / (60 * 60));
+    var leftSec = diff - hrs * 60 * 60;
+
+    var min = Math.floor(leftSec / (60));
+    var leftSec = leftSec - min * 60;
+}
+
+
 function convertTimeToSec(time) {
     return (time.second + (time.minute * 60) + (time.hour * 3600));
 }
@@ -123,10 +148,9 @@ function timer(hour, minute, second) {
       setTimeout(function() { alert(`Time is up! ${e}`); }, 1);
     }
   }, 1000);
-    if (convertTimeToSec(ct) = 0
-    {
+    
+}
 
-
-
-    }
+function timeInput(listUp) {
+    return targetTimeList[listUp].innerHTML;
 }
