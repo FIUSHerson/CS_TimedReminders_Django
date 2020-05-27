@@ -54,6 +54,12 @@
           {% empty %}
           <p>There is nothing here!</p>
           {% endfor %}
+
+          {% for time in object_list %}
+          <div class="list-time-hidden" id="list-time-hidden">
+                <p>{{ time.time_targ }}</p>
+          </div>
+          {% endfor %}
         </div>
     </div>
     <div class="bottom">
