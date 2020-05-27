@@ -7,8 +7,10 @@ const targetTimeList = container.querySelectorAll('div.list-time-hidden > p');
 
 // listeners
 window.addEventListener('load', function() {
-  console.log(targetTimeList[0].innerHTML);
-  timer(0,0,100);
+    dateDiff();
+    
+
+    
 })
 
 // vars
@@ -19,30 +21,43 @@ var ct = { // default values
 }
 
 var initTime = 0;
-var 
+ 
 
 
 // functions
 function dateDiff() {
     for (i = 0; i <= targetTimeList.length; i++) {
         var listTime = targetTimeList[i];
+        console.log(listTime);
         var date1 = new Date();
         var date2 = new Date(listTime);
-        showDiff(date1, date2);
+        var diff = showDiff(date1, date2);
+        timer(diff.hrs, diff.min, diff.leftSec)
+        console.log(date1);
+        console.log(date2);
     }
    
 }
 
 function showDiff(date1, date2) {
-
+    var timeClock = {
+        hrs:0,
+        min:0,
+        leftSec:0
+    }
+    console.log(date1);
+    console.log(date2);
     var diff = (date2 - date1) / 1000;
     diff = Math.abs(Math.floor(diff));
+    console.log(diff);
+    timeClock.hrs = Math.floor(diff / (60 * 60));
+    timeClock.leftSec = diff - timeClock.hrs * 60 * 60;
 
-    var hrs = Math.floor(diff / (60 * 60));
-    var leftSec = diff - hrs * 60 * 60;
-
-    var min = Math.floor(leftSec / (60));
-    var leftSec = leftSec - min * 60;
+    timeClock.min = Math.floor(timeClock.leftSec / (60));
+    timeClock.leftSec = timeClock.leftSec - timeClock.min * 60;
+    console.log(timeClock);
+    return timeClock;
+    
 }
 
 
@@ -151,6 +166,3 @@ function timer(hour, minute, second) {
     
 }
 
-function timeInput(listUp) {
-    return targetTimeList[listUp].innerHTML;
-}
