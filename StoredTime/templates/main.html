@@ -30,10 +30,9 @@
         </div>
 
         <div class="icons">
-          <form class="delete-form" action="{% url TimedReminders:delete-something %}" method="post">
+          <form class="delete-form" action="{% url StoredTime:delete-something %}" method="post">
             {% csrf_token %}
             <img src="{% static '/close.png' %}" alt="delete" class="delete-icon" id="delete-icon">
-
           </form>
         </div>
       </li>
