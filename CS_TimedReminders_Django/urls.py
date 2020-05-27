@@ -27,7 +27,8 @@ urlpatterns = [
     path('add/', views.add, name='add'),
     path('countdown/', TimeList.as_view(template_name = 'countdown.html'), name='countdown'),
     path('admin/', admin.site.urls),
-    url(r'^delete/(?P<name>[0-9]+)/$', views.TimeTarget, name='delete-something')
+    path('delete/', views.delete, name='yeetus-deletus'),
+    path('create/', views.create, name='create')
 ]
 
 urlpatterns += staticfiles_urlpatterns()

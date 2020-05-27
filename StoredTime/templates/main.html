@@ -30,7 +30,7 @@
         </div>
 
         <div class="icons">
-          <form class="delete-form" action="{% url StoredTime:delete-something %}" method="post">
+          <form class="delete-form" action="{% url 'yeetus-deletus' %}" method="post">
             {% csrf_token %}
             <img src="{% static '/close.png' %}" alt="delete" class="delete-icon" id="delete-icon">
           </form>
@@ -45,7 +45,6 @@
         <a type="submit" id="add-button" class="action-buttons" href="{% url 'add' %}">Add</a>
         <a type="submit" id="start-button" class="action-buttons" href="{% url 'countdown' %}">Start</a>
     </div>
-
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="{% static 'main.js' %}"></script>
 

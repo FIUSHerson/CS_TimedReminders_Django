@@ -13,12 +13,13 @@ const cancelButton = document.getElementById('cancel-button');
 // listeners
 saveButton.addEventListener('click', function (e) {
     e.preventDefault();
-    
+
     try {// Run save functions
         var time = makeMyTime();
         var date = makeMyDate(time);
         var newDate = compileTime(date);
         verifyFinalTime(newDate);
+        save(nameInput, newDate);
         console.log(newDate);
         // django save
     } catch(e) {
@@ -165,4 +166,42 @@ function makeSimpleTime(rawTime, switchValue) {
         console.log("Successfully marked as AM")
         return `${rawTime} AM`;
     }
+}
+
+function save(theName, theTime) {
+  $.ajaxSetup({
+     beforeSend: function(xhr, settings) {
+         function getCookie(name) {
+             var cookieValue = null;
+             if (document.cookie && document.cookie != '') {
+                 var cookies = document.cookie.split(';');
+                 for (var i = 0; i < cookies.length; i++) {
+                     var cookie = jQuery.trim(cookies[i]);
+                     // Does this cookie string begin with the name we want?
+                     if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                         cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                         break;
+                     }
+                 }
+             }
+             return cookieValue;
+         }
+         if (!(/^http:.*/.test(settings.url) || /^https:.*/.test(settings.url))) {
+             // Only send the token to relative URLs i.e. locally.
+             xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
+         }
+     }
+});
+
+  $.ajax({
+    type: 'POST',
+    url: '/create/',
+    data: {
+      nameInput: theName,
+      time: theTime,
+      csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()
+    },
+    processData: false,
+    contentType: false,
+  });
 }
