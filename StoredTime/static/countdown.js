@@ -8,6 +8,7 @@ const targetTimeList = container.querySelectorAll('div.list-time-hidden > p');
 // listeners
 window.addEventListener('load', function() {
     dateDiff();
+    
 })
 
 // vars
@@ -23,9 +24,8 @@ var initTime = 0;
 
 // functions
 function dateDiff() {
-    var i=0
+    
     for (i = 0; i <= targetTimeList.length;i++) {
-        var list =0
         var list = targetTimeList[i].innerHTML;
         console.log(list);
         console.log(i);
@@ -40,7 +40,7 @@ function dateDiff() {
         console.log(date1);
         console.log(date2);
         console.log(i);
-             
+        
 
     }
    
@@ -60,7 +60,7 @@ function showDiff(date1, date2) {
 
     timeClock.min = Math.floor(timeClock.leftSec / (60));
     timeClock.leftSec = timeClock.leftSec - timeClock.min * 60;
-    console.log(timeClock);
+    
     return timeClock;
     
 }
