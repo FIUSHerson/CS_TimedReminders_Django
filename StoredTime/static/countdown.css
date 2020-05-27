@@ -40,3 +40,7 @@
     transition-timing-function: linear;
     overflow: hidden;
 }
+
+.list-time-hidden {
+  display: none;
+}

@@ -2,10 +2,13 @@
 const stopButton = document.getElementById('stop-button');
 const timeText = document.getElementById('time-text');
 const progBar = document.getElementById('progress-bar');
+const container = document.querySelector('#list-time-hidden');
+const targetTimeList = container.querySelectorAll('div.list-time-hidden > p');
 
 // listeners
 window.addEventListener('load', function() {
-  timer(1,0,20);
+    dateDiff();
+    
 })
 
 // vars
@@ -16,8 +19,53 @@ var ct = { // default values
 }
 
 var initTime = 0;
+ 
+
 
 // functions
+function dateDiff() {
+    
+    for (i = 0; i <= targetTimeList.length;i++) {
+        var list = targetTimeList[i].innerHTML;
+        console.log(list);
+        console.log(i);
+        var listTime = list.replace("a.m.", "AM");
+        var listTime = list.replace("p.m.", "PM");
+        console.log(listTime)
+
+        var date1 = new Date();
+        var date2 = new Date(listTime);
+        var diff = showDiff(date1, date2);
+        timer(diff.hrs, diff.min, diff.leftSec)
+        console.log(date1);
+        console.log(date2);
+        console.log(i);
+        
+
+    }
+   
+}
+
+function showDiff(date1, date2) {
+    var timeClock = {
+        hrs: -1,
+        min: -1,
+        leftSec: -1
+    }
+    var diff = (date2 - date1) / 1000;
+    diff = Math.abs(Math.floor(diff));
+    console.log(diff);
+    timeClock.hrs = Math.floor(diff / (60 * 60));
+    timeClock.leftSec = diff - timeClock.hrs * 60 * 60;
+
+    timeClock.min = Math.floor(timeClock.leftSec / (60));
+    timeClock.leftSec = timeClock.leftSec - timeClock.min * 60;
+    
+    return timeClock;
+    
+}
+
+
 function convertTimeToSec(time) {
     return (time.second + (time.minute * 60) + (time.hour * 3600));
 }
@@ -89,7 +137,11 @@ function decreaseTimer() {
           ct.second = 59;
           console.log(ct.hour, ct.minute, ct.second);
         }
-        else {throw '';}
+        else {
+
+
+            throw '';
+        }
       }
     }
     else {
@@ -115,5 +167,7 @@ function timer(hour, minute, second) {
       clearInterval(interval);
       setTimeout(function() { alert(`Time is up! ${e}`); }, 1);
     }
-   }, 1000);
+  }, 1000);
+    
 }
+

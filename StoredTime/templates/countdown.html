@@ -45,10 +45,20 @@
               <p class="list-name">Time: </p>
               <p class="list-text-content">{{ time.time_targ }}</p>
 
+              <div id="list-name-hidden">
+                <div id="{{ time.name }}"></div>
+              </div>
+
             </div>
           </li>
           {% empty %}
           <p>There is nothing here!</p>
+          {% endfor %}
+
+          {% for time in object_list %}
+          <div class="list-time-hidden" id="list-time-hidden">
+                <p>{{ time.time_targ }}</p>
+          </div>
           {% endfor %}
         </div>
     </div>
