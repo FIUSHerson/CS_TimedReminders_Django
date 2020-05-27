@@ -25,3 +25,11 @@ def delete(request, name):
         return redirect('/')
 
     return render(request, 'main.html', {'name': name})
+
+def create(request):
+    if request.method == 'POST':
+        name = request.POST.get('nameInput', False)
+        time = request.POST.get('time', False)
+
+        obj = TimeTarget(name=name, time_targ=time)
+        obj.save()

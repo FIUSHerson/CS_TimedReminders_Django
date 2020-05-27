@@ -1,4 +1,4 @@
-"""CS_TimedReminders_Django URL Configuration
+"""CS_StoredTime_Django URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.0/topics/http/urls/
@@ -17,18 +17,18 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
+from django.conf.urls import url
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from StoredTime import views
 from StoredTime.views import TimeList
-
-app_name = TimedReminders
 
 urlpatterns = [
     path('', TimeList.as_view(template_name = 'main.html'), name='time-list'),
     path('add/', views.add, name='add'),
     path('countdown/', TimeList.as_view(template_name = 'countdown.html'), name='countdown'),
     path('admin/', admin.site.urls),
-    url(r'^delete/(?P<name>[0-9]+)/$', views.TimeTarget, name='delete-something')
+    path('delete/', views.delete, name='yeetus-deletus'),
+    path('create/', views.create, name='create')
 ]
 
 urlpatterns += staticfiles_urlpatterns()
