@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 
 from StoredTime.models import TimeTarget
@@ -17,14 +17,15 @@ def add(request):
 def countdown(request):
     return render(request, 'countdown.html')
 
-def delete(request, name):
-    myTime = get_object_or_404(TimeTarget, name=name)
-
+def delete(request):
     if request.method == 'POST':
-        myTime.delete()
+        name = request.GET['id']
+
+        t = TimeTarget.models.get(name=name)
+        t.delete()
         return redirect('/')
 
-    return render(request, 'main.html', {'name': name})
+    return redirect('/')
 
 def create(request):
     if request.method == 'POST':
